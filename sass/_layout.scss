@@ -1,0 +1,58 @@
+// Titre principal
+.information {
+  text-align: center;
+  padding: 30px;
+  background-color: $background-color;
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: $text-color;
+  }
+  
+  p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: 300;
+    color: $dark-grey;
+  }
+}
+
+// Section fonctionnement
+.fonctionnement {
+  padding: 30px;
+  background-color: $white;
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: $text-color;
+  }
+}
+
+.choix-client {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 30px;
+}
+
+// Restaurants
+.restaurants {
+  padding: 30px;
+  background-color: $background-color;
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: $text-color;
+    font-weight: 700;
+  }
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}

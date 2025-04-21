@@ -1,0 +1,14 @@
+// Styles généraux
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: $text-color;
+    background-color: $background-color;
+  }
+  
+  .main-container {
+    max-width: 768px;
+    margin: auto;
+  }
+  

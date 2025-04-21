@@ -1,0 +1,36 @@
+// Footer
+footer {
+  background-color: $dark-grey;
+  padding: 30px;
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  a {
+    color: $white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+  img {
+    filter: invert(1);
+    width: 140px;
+    height: 27px;
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
+
+i.fa-solid {
+  &.fa-handshake-angle, &.fa-utensils {
+    color: $white;
+    margin-right: 10px;
+  }
+}

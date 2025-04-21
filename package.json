@@ -1,0 +1,11 @@
+{
+  "name": "project-name",
+  "version": "0.0.1",
+  "description": "Project Description",
+  "scripts": {
+   "sass": "sass --watch ./sass/main.scss:assets/css/style.css --style compressed"
+  },
+  "dev-dependencies": {
+    "sass": "^1.86.3"
+  }
+}
