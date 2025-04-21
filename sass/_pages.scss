@@ -1,0 +1,135 @@
+.page-restaurant {
+    font-family: 'Roboto', sans-serif;
+  
+    header {
+      background-color: white;
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  
+    main {
+      img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+  
+      .corp-de-texte {
+        background-color: #f6f6f6;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        margin-top: -40px;
+        padding: 30px 20px;
+  
+        .main-title {
+          font-size: 1.8rem;
+          margin-bottom: 25px;
+        }
+  
+        .cards-container {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+        }
+  
+        .card {
+          background-color: white;
+          border-radius: 20px;
+          padding: 20px;
+  
+          .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #99E2D0;
+            width: fit-content;
+          }
+  
+          .sub-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+          }
+  
+          .sub-card {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+  
+            h3 {
+              font-size: 1rem;
+              margin: 0;
+            }
+  
+            .affichage-prix {
+              text-align: right;
+              p {
+                margin: 0;
+                font-size: 0.85rem;
+                color: gray;
+              }
+              .prix {
+                font-weight: bold;
+                font-size: 1rem;
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+  
+        .btn.commander {
+          margin: 30px auto 0;
+          display: block;
+          background: linear-gradient(to right, #ff79da, #9356dc);
+          color: white;
+          font-size: 1.2rem;
+          padding: 15px 30px;
+          border-radius: 30px;
+          border: none;
+          cursor: pointer;
+          transition: transform 0.2s ease;
+          
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  
+    footer {
+      background-color: #353535;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+  
+      img {
+        filter: brightness(0) invert(1);
+        width: 100px;
+        margin-bottom: 10px;
+      }
+  
+      ul.footer {
+        list-style: none;
+        padding: 0;
+  
+        li {
+          margin: 5px 0;
+          a {
+            color: white;
+            text-decoration: none;
+          }
+  
+          i {
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+  }
