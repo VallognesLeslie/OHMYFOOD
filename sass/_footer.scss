@@ -19,12 +19,12 @@ footer {
     font-weight: 400;
   }
   
-  img {
-    filter: invert(1);
-    width: 140px;
-    height: 27px;
-    font-size: 18px;
+  .footer-logo {
+    font-family: 'Shrikhand', cursive;
+    color: white;
     font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 20px;
   }
 }
 

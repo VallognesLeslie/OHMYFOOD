@@ -5,11 +5,14 @@
     align-items: center;
   }
   
-  @mixin box-shadow($shadow...) {
+  @mixin box-shadow($shadow...) { //$shadow, avec ... qui signifie "peut contenir plusieurs valeurs"
     box-shadow: $shadow;
   }
   
-  @mixin border-radius($radius) {
+  @mixin border-radius($radius) { // Mixin qui attend un seul paramètre $radius
     border-radius: $radius;
   }
   
+
+  //Un @mixin c'est comme une fonction réutilisable contenant un ou plusieurs styles CSS. On epux l’appeler avec @include, ce qui évite de dupliquer du code partout dans tes fichiers.
+

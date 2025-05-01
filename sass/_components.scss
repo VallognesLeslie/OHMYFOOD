@@ -1,4 +1,4 @@
-// Bouton Explorer
+// Bouton Explorer 
 .bouton-explore {
   background: linear-gradient($secondary-color, $primary-color);
   color: $white;
@@ -14,10 +14,10 @@
   margin-bottom: 20px;
 }
 
-// Composant choix
+// Composant choix 
 .choix {
   background-color: $background-color;
-  padding: 15px 15px 15px 60px;
+  padding: 15px 15px 15px 30px;
   @include border-radius(20px);
   font-size: 16px;
   @include box-shadow(0 3px 10px rgba(0, 0, 0, 0.1));
@@ -52,10 +52,20 @@
 }
 
 // Cartes restaurants
-.card {
-  background-color: $white;
+.restaurant-card {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.card-container {
+  position: relative;
   @include border-radius(15px);
   @include box-shadow(0 3px 5px rgba(0, 0, 0, 0.1));
+  background-color: $white;
+  overflow: hidden;
+}
+
+.card {
   text-decoration: none;
   color: $text-color;
   display: block;
@@ -84,16 +94,13 @@
     font-size: 17px;
     color: $text-color;
     font-weight: 300;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 }
 
 .nouveau {
   position: absolute;
-  top: -140px;
-  right: 10px;
+  top: 15px;
+  right: 15px;
   background-color: $tertiary-color;
   color: #008766;
   padding: 7px 12px;
@@ -105,48 +112,49 @@
 // Coeur "j'aime"
 .heart-wrapper {
   position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  margin-left: 0;
+  top: auto;
+  bottom: 25px;
+  right: 15px;
   cursor: pointer;
-  
-  input {
-    display: none;
-  }
-  
-  .heart-icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: opacity 0.3s ease;
-    font-size: 30px;
-  }
-  
-  .filled {
-    opacity: 0;
-    background: linear-gradient($primary-color, $secondary-color);
-    background-clip: text;
-    -webkit-background-clip: text;
-    text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  input:checked {
-    & + .fa-heart + .filled {
-      opacity: 1;
-    }
-    
-    & + .fa-heart {
-      opacity: 0;
-    }
-  }
+  display: inline-block;
+  z-index: 10;
 }
 
+/* Cœur non rempli (contour) */
 .fa-heart {
-  font-size: 2px;
+  font-size: 24px; /* Taille ajustable selon vos besoins */
+  color: #000;     /* Couleur du contour */
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.3s;
 }
-  
+
+/* Cœur rempli avec dégradé (initialement invisible) */
+.filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  font-size: 24px; /* Même taille que .fa-heart */
+  background: linear-gradient($primary-color, $secondary-color);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+
+/* Quand la checkbox est cochée, masquer le cœur non rempli */
+input:checked + .fa-heart {
+  opacity: 0;
+}
+
+/* Quand la checkbox est cochée, afficher le cœur rempli */
+input:checked + .fa-heart + .filled {
+  opacity: 1;
+}
+
+/* Cacher la checkbox */
+input[type="checkbox"] {
+  display: none;
+}
