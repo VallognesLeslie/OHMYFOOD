@@ -28,6 +28,7 @@
     font-size: 24px;
     margin-bottom: 20px;
     color: $text-color;
+    margin-left: -15px;
   }
 }
 
@@ -40,7 +41,7 @@
 
 // Restaurants
 .restaurants {
-  padding: 30px;
+  padding: 60px 15px;
   background-color: $background-color;
   
   h2 {

@@ -12,6 +12,13 @@
   width: 220px;
   font-weight: 500;
   margin-bottom: 20px;
+  transition: all 0.3s ease;
+ 
+  &:hover {
+    opacity: 0.9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    filter: brightness(1.05);
+  } 
 }
 
 // Composant choix 
@@ -26,6 +33,8 @@
   align-items: center;
   color: $text-color;
   font-weight: 500;
+  height: 70px;
+ 
   
   i {
     color: #7e7e7e;
@@ -54,7 +63,6 @@
 // Cartes restaurants
 .restaurant-card {
   position: relative;
-  margin-bottom: 20px;
 }
 
 .card-container {
@@ -74,12 +82,13 @@
     width: 100%;
     height: 150px;
     object-fit: cover;
+    object-position: center 63%;
     @include border-radius(15px 15px 0 0);
   }
 }
 
 .card-content {
-  padding: 15px;
+  padding: 10px;
   position: relative;
   
   h3 {
