@@ -147,50 +147,56 @@ main {
   }
   
   .restaurant-header {
-    @include flex-between;
-    margin-bottom: 30px;
-    
-    .main-title {
-      font-family: $font-family-title;
-      font-size: 28px;
-      font-weight: $font-weight-regular;
-    }
-    
-    .heart-wrapper {
-      position: relative;
-      cursor: pointer;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      
-      .heart-checkbox {
-        display: none;
-        
-        &:checked ~ .heart-icon.filled {
-          opacity: 1;
-          transform: scale(1);
-        }
+  display: flex;
+  align-items: center; // Centrage vertical
+  justify-content: space-between;
+  margin-top: -15px;
+  margin-bottom: 15px;
+
+  .main-title {
+    font-family: $font-family-title;
+    font-size: 28px;
+    font-weight: $font-weight-regular;
+    line-height: 1; // pour éviter que le titre prenne trop de hauteur
+    margin: 0;
+  }
+
+  .heart-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 45px;
+
+
+    .heart-checkbox {
+      display: none;
+
+      &:checked ~ .heart-icon.filled {
+        opacity: 1;
+        transform: scale(1);
+
       }
-      
-      .heart-icon {
-        font-size: 24px;
-        transition: all 0.3s ease;
+    }
+
+    .heart-icon {
+      font-size: 24px;
+      transition: all 0.3s ease;
+      position: relative; 
+
+      &.filled {
+        opacity: 0;
+        transform: scale(0.8);
+        background: linear-gradient($primary-color, $secondary-color);
+        background-clip: text;
+        color: transparent;
         position: absolute;
-        
-        &.filled {
-          opacity: 0;
-          transform: scale(0.8);
-          color: transparent;
-          background: linear-gradient($primary-color, $secondary-color);
-          -webkit-background-clip: text;
-          background-clip: text;
-        }
       }
     }
   }
 }
+}
+
 
 // Menu Sections
 .menu-section {
@@ -238,6 +244,8 @@ main {
   .card-text {
     width: calc(100% - 70px);
     overflow: hidden;
+    transition: width 0.3s ease;
+
     
     h4 {
       font-size: 18px;
@@ -255,6 +263,13 @@ main {
       text-overflow: ellipsis;
     }
   }
+
+  // Quand l’animation du check est active
+  &:hover .card-text p,
+  &:focus .card-text p {
+    width: calc(100% - 130px); // réduction dynamique
+  }
+
   
   .prix {
     font-weight: $font-weight-bold;
@@ -337,7 +352,7 @@ footer {
       a {
         color: $white;
         font-size: 16px;
-        font-size: 500;
+        font-weight: 500;
       }
     }
   }
