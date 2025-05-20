@@ -1,18 +1,33 @@
-// Mixins
+// Centrage flex
 @mixin flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
+  // Ombre
   @mixin box-shadow($shadow...) { //$shadow, avec ... qui signifie "peut contenir plusieurs valeurs"
     box-shadow: $shadow;
   }
-  
+
+  // Bordure arrondie
   @mixin border-radius($radius) { // Mixin qui attend un seul paramètre $radius
     border-radius: $radius;
   }
-    
+   
+  // Media queries
+
+  @mixin tablet {
+    @media (min-width: $breakpoint-tablet-min) and (max-width: $breakpoint-tablet-max) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media (min-width: $breakpoint-desktop-min) and (max-width: $breakpoint-desktop-max) {
+      @content;
+    }
+  }
 
   //Un @mixin c'est comme une fonction réutilisable contenant un ou plusieurs styles CSS. On epux l’appeler avec @include, ce qui évite de dupliquer du code partout dans tes fichiers.
 

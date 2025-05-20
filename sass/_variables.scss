@@ -1,4 +1,4 @@
-// Variables
+// Couleurs
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $background-color: #f6f6f6;
@@ -7,3 +7,9 @@ $tertiary-color: #99E2D0;
 $dark-grey: #353535;
 $light-grey: #eaeaea;
 $white: #ffff;
+
+//Breakpoints
+$breakpoint-tablet-min: 769px;// Min tablette
+$breakpoint-tablet-max: 1024px;// Max tablette
+$breakpoint-desktop-min: 1025px;//Min desktop
+$breakpoint-desktop-max: 2560px;//Max desktop
