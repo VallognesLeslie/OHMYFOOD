@@ -17,8 +17,11 @@ $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-bold: 700;
 
-// Breakpoints
-$mobile-breakpoint: 768px;
+//Breakpoints
+$breakpoint-tablet-min: 769px;// Min tablette
+$breakpoint-tablet-max: 1024px;// Max tablette
+$breakpoint-desktop-min: 1025px;//Min desktop
+$breakpoint-desktop-max: 2560px;//Max desktop
 
 // Mixins
 @mixin flex-center {
@@ -60,6 +63,20 @@ $mobile-breakpoint: 768px;
     filter: brightness(1.05);
   }
 }
+
+// Media queries
+
+  @mixin tablet {
+    @media (min-width: $breakpoint-tablet-min) and (max-width: $breakpoint-tablet-max) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media (min-width: $breakpoint-desktop-min) and (max-width: $breakpoint-desktop-max) {
+      @content;
+    }
+  }
 
 // Styles de base
 * {
@@ -131,6 +148,12 @@ header {
 // Main content
 main {
   position: relative;
+  @include tablet {
+    background-color: $white;
+  }
+  @include desktop {
+    background-color: $white;
+  }
   
   > img {
     width: 100%;
@@ -144,14 +167,37 @@ main {
     margin-top: -40px;
     position: relative;
     padding: 30px 15px;
-  }
+    @include tablet {
+      margin-right: 150px;
+      margin-left: 150px;
+      padding: 30px 60px;
+      } 
+      @include desktop {
+        margin-right: 200px;
+        margin-left: 200px;
+        padding: 30px 130px;
+      } 
+   }
   
   .restaurant-header {
   display: flex;
-  align-items: center; // Centrage vertical
+  align-items: center;
   justify-content: space-between;
   margin-top: -15px;
   margin-bottom: 15px;
+  gap: 15px;
+  @include tablet {
+    justify-content: space-evenly;
+    margin-top: 0;
+    align-items: center;
+    gap: 30px;
+  }
+  @include desktop {
+    justify-content: space-evenly;
+    margin-top: 0;
+    align-items: center;
+    gap: 30px;
+  }
 
   .main-title {
     font-family: $font-family-title;
@@ -324,20 +370,52 @@ main {
 // Footer
 footer {
   background-color: $dark-bg-color;
-  padding: 25px 20px;
+  padding: 30px 25px;
   color: $white;
-  
+  @include tablet {
+    height: 115px;
+  }
+  @include desktop {
+    height: 115px;
+}
+} 
+
+@include tablet {
+.footer-content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@include desktop {
+.footer-content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+}
+}
+}
+
  .footer-logo {
   font-family: 'Shrikhand', cursive;
   color: white;
   font-weight: 400;
   font-size: 18px;
   margin-bottom: 20px;
+  @include tablet {
+    display: flex;
+    flex-direction: row-reverse
+  }
+  @include desktop {
+    display: flex;
+    flex-direction: row-reverse
+  }
 }
   
   ul.footer {
     @include flex-column;
-    
     
     li {
       display: flex;
@@ -355,7 +433,7 @@ footer {
       }
     }
   }
-}
+
 
 // Animations
 @keyframes fadeIn {

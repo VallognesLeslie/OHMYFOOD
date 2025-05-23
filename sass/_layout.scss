@@ -10,6 +10,9 @@
     font-weight: 700;
     color: $text-color;
     @include tablet { 
+      font-size: 30px;
+    }
+    @include desktop { 
       font-size: 40px;
     }
   }
@@ -19,6 +22,9 @@
     margin-bottom: 25px;
     font-weight: 300;
     color: $dark-grey;
+    @include tablet {
+      font-size: 20px;
+    }
   }
 }
 
@@ -82,11 +88,8 @@
   color: $text-color;
   font-weight: bold;//500 ne fonctionnais pas
   height: 70px;
-  @include desktop {
-    width: 600px;}
-    @include tablet {
-      
-    }
+
+  
      
   i {
     color: #7e7e7e;
@@ -120,27 +123,25 @@
       flex-direction: row;
       padding-bottom: 10px;
       justify-content: space-evenly;
-      align-items: flex-start; /* Changed to flex-start */
-      white-space: nowrap;
-      flex-wrap: nowrap;
+      align-items: flex-start; 
     }
     @include desktop {
       flex-direction: row;
       padding-bottom: 10px;
       justify-content: space-evenly;
-      align-items: flex-start; /* Changed to flex-start */
-      white-space: nowrap;
-      flex-wrap: nowrap;
+      align-items: flex-start; 
+  
     }
   
     .choix {
       flex: 1;
-      min-width: 0;
+      min-width: 0; 
       display: flex;
       align-items: center;
       justify-content: flex-start;
     }
   }
+  
 
 // Restaurants
 .restaurants {
