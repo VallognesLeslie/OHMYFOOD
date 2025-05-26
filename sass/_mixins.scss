@@ -5,6 +5,40 @@
     align-items: center;
   }
 
+  @mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin shadow($opacity: 0.1) {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, $opacity);
+}
+
+@mixin btn-gradient {
+  background: linear-gradient(170deg, $secondary-color, $primary-color);
+  color: $white;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 50px;
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  @include shadow(0.2);
+  
+  &:hover {
+    opacity: 0.9;
+    @include shadow(0.3);
+    filter: brightness(1.05);
+  }
+}
+
   // Ombre
   @mixin box-shadow($shadow...) { //$shadow, avec ... qui signifie "peut contenir plusieurs valeurs"
     box-shadow: $shadow;
@@ -23,11 +57,16 @@
     }
   }
   
-  @mixin desktop {
-    @media (min-width: $breakpoint-desktop-min) and (max-width: $breakpoint-desktop-max) {
-      @content;
-    }
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop-min) {
+    @content;
   }
+}
+
+@mixin tablet-desktop {
+  @include tablet { @content; }
+  @include desktop { @content; }
+}
 
   //Un @mixin c'est comme une fonction réutilisable contenant un ou plusieurs styles CSS. On epux l’appeler avec @include, ce qui évite de dupliquer du code partout dans tes fichiers.
 

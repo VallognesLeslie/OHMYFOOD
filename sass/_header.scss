@@ -12,6 +12,7 @@ header {
       font-family: 'Shrikhand', cursive;
       font-weight: 400;
       font-size: 30px;
+      text-align: center;
     }
    
     p {
@@ -19,10 +20,29 @@ header {
       font-size: 16px;
     }
   }
-  
+  nav {
+    @include flex-center;
+    position: relative;
+    
+    a {
+      position: absolute;
+      left: 20px;
+      color: $text-color;
+      font-size: 20px;
+    }
+    
+    h1 {
+      margin: 0;
+      text-align: center;
+      
+      img {
+        height: 30px;
+      }
+    }
+  }
+
   .localisation {
     @include flex-center;
-    gap: 17px;
     height: 50px;
     background-color: $light-grey;
     font-size: 16px;
