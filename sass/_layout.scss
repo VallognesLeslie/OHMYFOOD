@@ -77,9 +77,9 @@
   transition: all 0.3s ease;
  
   &:hover {
-    opacity: 0.9;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    filter: brightness(1.05);
+    opacity: 0.9;//legere transparence au survol
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.08);//éclaircissement du bouton
   } 
 }
 
@@ -107,9 +107,6 @@ h2 {
   font-size: 24px;
   margin-bottom: 20px;
   color: $text-color;
-    @include tablet-desktop{
-      margin-left: 0px;
-    }
 }
 
 // Composant choix 
@@ -176,7 +173,7 @@ i {
 }
   
 
-// Restaurants
+// Cartes Restaurants
 
 .restaurants {
   padding: 50px 20px 30px 20px;
@@ -187,31 +184,34 @@ i {
   }
 }
 
+@include tablet-desktop {
+  .restaurant-card {
+    width: 45%;
+  
+  }
+}
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
 
 .cards-container {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
-  max-width: 1800px;
   margin: auto;
   margin-bottom: 50px;
-  @include tablet{
-    grid-template-columns: 1fr 1fr;
-    column-gap: 60px;
-    row-gap: 40px;
-  }
-  @include desktop {
-    grid-template-columns: 1fr 1fr;
-    column-gap: 90px;
-    row-gap: 50px;
+   @include tablet-desktop{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px; 
   }
 }
 
-
-// Cartes restaurants
-.restaurant-card {
-  position: relative;
-}
 
 .card-container {
   position: relative;
@@ -228,7 +228,7 @@ i {
   
   img {
     width: 100%;
-    height: 150px;
+    height: 200px;
     object-fit: cover;
     object-position: center 63%;
     @include border-radius(15px 15px 0 0);

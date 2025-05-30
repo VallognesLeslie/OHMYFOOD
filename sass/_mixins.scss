@@ -33,10 +33,10 @@
   @include shadow(0.2);
   
   &:hover {
-    opacity: 0.9;
-    @include shadow(0.3);
-    filter: brightness(1.05);
-  }
+  opacity: 0.9;//legere transparence au survol
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.08);//éclaircissement du bouton
+  } 
 }
 
   // Ombre

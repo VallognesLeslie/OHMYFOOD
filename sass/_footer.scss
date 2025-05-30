@@ -2,8 +2,9 @@ footer {
   background-color: $dark-grey;
   padding: 20px 25px;
   color: $white;
+  min-width: 769px;
     @include tablet-desktop {
-      padding: 2px 25px;
+      padding: 2px 25px 0;
     }
 } 
 

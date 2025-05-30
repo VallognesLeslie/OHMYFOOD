@@ -6,7 +6,7 @@ main {
  
   > img {
     width: 100%;
-    height: 250px;
+    height: 300px;
     object-fit: cover;//sans déformation
   }
   
@@ -25,6 +25,10 @@ main {
         margin-right: 200px;
         margin-left: 200px;
         padding: 30px 130px;
+        max-width: 1440px;   //bloque la largeur maximale pour ne pas trop étirer sur grand écran
+        width: calc(100% - 400px); //donne un effet fluide en conservant des marges latérales
+        margin-left: auto;   //centre le bloc horizontalement
+        margin-right: auto;
       } 
    }
   
@@ -60,7 +64,7 @@ main {
     margin-top: 45px;
 
 
-    .heart-checkbox {
+    .heart-checkbox {//coeur plein est caché par défaut quand la case est cochée il apparaît avec un effet de zoom et dégradé
       display: none;
 
       &:checked ~ .heart-icon.filled {
@@ -98,7 +102,7 @@ main {
     margin-bottom: 20px;
     position: relative;
     
-    &::after {
+    &::after {//ajoute une ligne verte sous chaque titre de section
       content: '';
       position: absolute;
       left: 0;
@@ -124,13 +128,13 @@ main {
   opacity: 0;
   transform: translateY(10px);
   
-  @for $i from 1 through 12 {
+  @for $i from 1 through 12 {//animation en cascade chaque carte apparaît avec un léger retard par rapport à la précédente
     &:nth-of-type(#{$i}) {
-      animation-delay: #{($i - 1) * 0.1}s;
+      animation-delay: #{($i - 1) * 0.2}s;
     }
   }
   
-  .card-text {
+  .card-text {//réserve de l’espace à droite pour les icônes (prix + check)
     width: calc(100% - 70px);
     overflow: hidden;
     transition: width 0.3s ease;
@@ -155,7 +159,7 @@ main {
 
   // Quand l’animation du check est active
   &:hover .card-text p,
-  &:focus .card-text p {
+  &:focus .card-text p {//important pour l'accessibilité
     width: calc(100% - 130px); // réduction dynamique
   }
 
@@ -186,7 +190,7 @@ main {
     }
   }
   
-  &:hover, &:focus {
+  &:hover, &:focus {//au survole de la carte le prix glisse vers la gauche pour faire apparaître le bouton de validation
     .prix {
       transform: translateX(-60px);
     }
@@ -228,7 +232,9 @@ main {
   }
 }
 
-@keyframes rotate {//animation suplémantaire, pour faire tourner la validation sur lui même 360°
+
+//animation suplémantaire, pour faire tourner la validation sur lui même 360°
+@keyframes rotate {
   from {//début
     transform: rotate(0);
   }
