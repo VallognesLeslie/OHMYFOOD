@@ -134,7 +134,7 @@ main {
     }
   }
   
-  .card-text {//réserve de l’espace à droite pour les icônes (prix + check)
+  .card-txt {//réserve de l’espace à droite pour les icônes (prix + check)
     width: calc(100% - 70px);
     overflow: hidden;
     transition: width 0.3s ease;
@@ -158,8 +158,8 @@ main {
   }
 
   // Quand l’animation du check est active
-  &:hover .card-text p,
-  &:focus .card-text p {//important pour l'accessibilité
+  &:hover .card-txt p,
+  &:focus .card-txt p {//important pour l'accessibilité
     width: calc(100% - 130px); // réduction dynamique
   }
 

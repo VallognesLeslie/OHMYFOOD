@@ -8,13 +8,11 @@
 body {
     font-family: $font-family-main;
     margin: auto;
-    padding: auto;
     color: $text-color;
     background-color: $background-color; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 2560px;
-   
   }
 
