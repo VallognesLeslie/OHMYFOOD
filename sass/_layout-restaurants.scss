@@ -91,6 +91,7 @@ main {
   }
 }
 }
+
 // Menu Sections
 .menu-section {
   margin-bottom: 40px;
@@ -205,16 +206,6 @@ main {
   }
 }
 
-// Bouton Commander
-.btn-wrapper {
-  @include flex-center;
-  margin: 50px 0 20px;
-  
-  .btn.commander {
-    @include btn-gradient;
-  }
-}
-
 // Animations
 @keyframes fadeIn {//faire apparaître l'élément progressivement le fesant glisser légèrement vers le haut
   to {
@@ -245,3 +236,12 @@ main {
 
 // rotate = rotation complète, checkSlide = glissement de droite à gauche, fadeIn = apparition progressive. From = 0% (début), to = 100% (fin)
 
+// Bouton Commander
+.btn-wrapper {
+  @include flex-center;
+  margin: 50px 0 20px;
+  
+  .btn.commander {
+    @include btn-gradient;
+  }
+}

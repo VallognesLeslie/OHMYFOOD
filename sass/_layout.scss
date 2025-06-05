@@ -279,7 +279,7 @@ i {
 
 /* Cœur non rempli (contour) */
 .fa-heart {
-  font-size: 24px; /* Taille ajustable selon vos besoins */
+  font-size: 24px; 
   color: #000;     /* Couleur du contour */
   position: relative;
   z-index: 1;
@@ -300,12 +300,12 @@ i {
   z-index: 2;
 }
 
-/* Quand la checkbox est cochée, masquer le cœur non rempli */
+/* Quand la checkbox est cochée, masquer le coeur non rempli */
 input:checked + .fa-heart {
   opacity: 0;
 }
 
-/* Quand la checkbox est cochée, afficher le cœur rempli */
+/* Quand la checkbox est cochée, afficher le coeur rempli */
 input:checked + .fa-heart + .filled {
   opacity: 1;
 }
